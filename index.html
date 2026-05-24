@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pragyan Shukla</title>
-  <meta name="description" content="Pragyan Shukla — Software Developer, ML Enthusiast, Car Guy." />
+  <meta name="description" content="Pragyan Shukla: Software Developer, ML Enthusiast, Car Guy." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,19 +26,31 @@
 
 <body>
 
+  <!-- ====== DOT NAV ====== -->
+  <nav class="dot-nav" id="dot-nav" aria-label="Quick navigation">
+    <a class="dot-nav-item" href="#hero"       data-label="Home"></a>
+    <a class="dot-nav-item" href="#about"      data-label="About"></a>
+    <a class="dot-nav-item" href="#experience" data-label="Experience"></a>
+    <a class="dot-nav-item" href="#projects"   data-label="Projects"></a>
+    <a class="dot-nav-item" href="#skills"     data-label="Skills"></a>
+    <a class="dot-nav-item" href="#blog"       data-label="Blog"></a>
+    <a class="dot-nav-item" href="#terminal"   data-label="Terminal"></a>
+    <a class="dot-nav-item" href="#contact"    data-label="Contact"></a>
+  </nav>
+
   <!-- ====== NAVBAR ====== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">PS</a>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#about"      class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#blog" class="nav-link">Blog</a></li>
-        <li><a href="#terminal" class="nav-link">Terminal</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#projects"   class="nav-link">Projects</a></li>
+        <li><a href="#skills"     class="nav-link">Skills</a></li>
+        <li><a href="#blog"       class="nav-link">Blog</a></li>
+        <li><a href="#terminal"   class="nav-link">Terminal</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
       </ul>
 
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
@@ -56,9 +68,10 @@
       <p class="hero-greeting">Hey, I'm</p>
       <h1 class="hero-name">Pragyan Shukla</h1>
       <div class="hero-subtitle">
-        <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+        <span class="typewriter tw-clickable" id="typewriter" role="button" tabindex="0"
+          title="Try clicking this a few times..."></span><span class="cursor">|</span>
       </div>
-      <p class="hero-tagline">I build things that move — in code and on roads.</p>
+      <p class="hero-tagline">I build things that move. In code and on roads.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View Projects</a>
         <a href="mailto:prag.shank@gmail.com" class="btn btn-outline">Get In Touch</a>
@@ -104,18 +117,18 @@
         <div class="about-text">
           <p>
             I'm a CS grad from <strong>George Mason University</strong> (class of 2025), focused on
-            AI, machine learning, and data systems. I spent my college years building things that actually matter —
+            AI, machine learning, and data systems. I spent my college years building things that actually matter:
             automating 8-hour workflows down to 5 minutes, predicting solar panel output with ML models, and engineering
             data-observability pipelines at a credit union.
           </p>
           <p>
-            Since graduating, I've been shipping agentic AI projects, personal data tools, and open-source utilities —
+            Since graduating, I've been shipping agentic AI projects, personal data tools, and open-source utilities,
             because the best way to stay sharp is to keep building. When I'm not deep in a dataset or debugging a
             distributed system, you'll find me at a <strong>Cars &amp; Coffee</strong> meetup, geeking out over
             engineering under hoods, or in a specialty coffee shop thinking through my next project.
           </p>
           <p>
-            I'm drawn to roles at the intersection of <strong>ML, data engineering, and systems</strong> — especially
+            I'm drawn to roles at the intersection of <strong>ML, data engineering, and systems</strong>, especially
             where the work has real-world impact.
           </p>
 
@@ -207,10 +220,10 @@
               <span class="timeline-badge">Research</span>
             </div>
             <h3 class="timeline-role">Undergraduate Researcher</h3>
-            <p class="timeline-company">George Mason University — College of Science &middot; Fairfax, VA</p>
+            <p class="timeline-company">George Mason University &middot; College of Science &middot; Fairfax, VA</p>
             <ul class="timeline-bullets">
-              <li>Predicted photovoltaic solar panel output using supervised ML — SVR, Random Forest, Polynomial
-                Regression — achieving a 15% R&sup2; improvement over baseline.</li>
+              <li>Predicted photovoltaic solar panel output using supervised ML (SVR, Random Forest, Polynomial
+                Regression), achieving a 15% R&sup2; improvement over baseline.</li>
               <li>Evaluated models with MAE, MSE, RMSE, R&sup2; and iterated to optimize predictions.</li>
               <li>Presented findings at the RISE Symposium with a visually compelling poster and full written report.</li>
             </ul>
@@ -233,8 +246,8 @@
             <h3 class="timeline-role">Jr. Software Developer Intern</h3>
             <p class="timeline-company">ByteRatio Inc. &middot; Leesburg, VA</p>
             <ul class="timeline-bullets">
-              <li>Built an Excel automation app with Python + AWS, cutting an 8-hour manual process to 5 minutes — a
-                95% efficiency gain.</li>
+              <li>Built an Excel automation app with Python + AWS, cutting an 8-hour manual process to 5 minutes
+                (a 95% efficiency gain).</li>
               <li>Leveraged AWS S3, Lambda, SES/SNS for a serverless pipeline; containerized with Docker &amp;
                 Kubernetes.</li>
               <li>Collaborated cross-functionally to deliver scalable solutions, improving team productivity by 25%.</li>
@@ -291,225 +304,248 @@
         <button class="filter-pill" data-filter="systems">Systems</button>
       </div>
 
-      <div class="projects-grid" id="projects-grid">
+      <div class="carousel-wrap">
+        <button class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Previous projects">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
-        <div class="project-card" data-category="ml-ai">
-          <div class="project-thumb project-thumb--red">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-car"></i>
-            </div>
-            <span class="project-flag">Passion Project</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-name">AutoFind</h3>
-            <p class="project-desc">An AI-powered semantic search engine for cars — built because car search engines are
-              terrible. Uses Cohere NLP models for 30% better search relevance with a fully scraped, clean dataset.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">Cohere NLP</span>
-              <span class="tag tag--blue">Python</span>
-              <span class="tag tag--blue">ML</span>
-              <span class="tag tag--blue">Full-Stack</span>
-            </div>
-            <div class="project-links">
-              <span class="project-link-placeholder"><i class="fa-solid fa-lock"></i> Private Repo</span>
-            </div>
-          </div>
-        </div>
+        <div class="projects-carousel" id="projects-grid">
 
-        <div class="project-card" data-category="ml-ai">
-          <div class="project-thumb project-thumb--blue">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-solar-panel"></i>
+          <!-- 1. Signal-Scout - May 2026 -->
+          <div class="project-card" data-category="agents">
+            <div class="project-thumb project-thumb--red">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-satellite-dish"></i>
+              </div>
+              <span class="project-flag">Agents</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">Signal-Scout</h3>
+              <p class="project-desc">An AI-powered pipeline that extracts intent signals from prospect data and
+                generates hyper-personalized outreach, end-to-end from raw input to drafted message.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">TypeScript</span>
+                <span class="tag tag--blue">LLM Agents</span>
+                <span class="tag tag--blue">NLP</span>
+                <span class="tag tag--blue">Automation</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/pragyan2002/Signal-Scout" target="_blank" rel="noopener"
+                  class="project-link">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">PV Power Prediction</h3>
-            <p class="project-desc">Predicting photovoltaic solar panel output with supervised ML. Achieved a 15%
-              R&sup2; improvement over baseline using SVR, Random Forest, and Polynomial Regression.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">TensorFlow</span>
-              <span class="tag tag--blue">Scikit-learn</span>
-              <span class="tag tag--blue">Python</span>
-              <span class="tag tag--blue">Research</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.linkedin.com/in/pragyan-shukla-14808a206" target="_blank" rel="noopener"
-                class="project-link">
-                <i class="fa-brands fa-linkedin-in"></i> RISE Symposium
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="data">
-          <div class="project-thumb project-thumb--green">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-database"></i>
+          <!-- 2. GyNuRo - May 2026 -->
+          <div class="project-card" data-category="agents">
+            <div class="project-thumb project-thumb--blue">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-stethoscope"></i>
+              </div>
+              <span class="project-flag">Agents</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">GyNuRo</h3>
+              <p class="project-desc">An agentic teleconsultation app using multi-agent orchestration for patient
+                intake, symptom routing, and appointment scheduling. Built with a TypeScript agent framework.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">TypeScript</span>
+                <span class="tag tag--blue">Agentic AI</span>
+                <span class="tag tag--blue">Multi-Agent</span>
+                <span class="tag tag--blue">Full-Stack</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/pragyan2002/GyNuRo" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">Data Observability Framework</h3>
-            <p class="project-desc">A T-SQL-based data-quality monitoring framework for core-banking and loan
-              platforms. Parameter-driven stored procedures automate audits that previously took engineers hours.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">T-SQL</span>
-              <span class="tag tag--blue">SQL Server</span>
-              <span class="tag tag--blue">Azure DevOps</span>
-            </div>
-            <div class="project-links">
-              <span class="project-link-placeholder"><i class="fa-solid fa-building"></i> Enterprise Project</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="systems">
-          <div class="project-thumb project-thumb--purple">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-bolt"></i>
+          <!-- 3. SoundScape - May 2026 -->
+          <div class="project-card" data-category="data">
+            <div class="project-thumb project-thumb--green">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-music"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">SoundScape</h3>
+              <p class="project-desc">A music content enrichment pipeline that ingests raw music metadata and augments
+                it with genre tags, mood classifications, and semantic embeddings, fully automated.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">Python</span>
+                <span class="tag tag--blue">Data Pipeline</span>
+                <span class="tag tag--blue">NLP</span>
+                <span class="tag tag--blue">Music AI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/pragyan2002/SoundScape" target="_blank" rel="noopener"
+                  class="project-link">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
             </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">Excel Automation Pipeline</h3>
-            <p class="project-desc">AWS + Python pipeline that cut a manual Excel workflow from 8 hours to 5 minutes.
-              Serverless execution via Lambda, storage via S3, notifications via SES/SNS.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">Python</span>
-              <span class="tag tag--blue">AWS Lambda</span>
-              <span class="tag tag--blue">Docker</span>
-              <span class="tag tag--blue">S3</span>
-            </div>
-            <div class="project-links">
-              <span class="project-link-placeholder"><i class="fa-solid fa-building"></i> Enterprise Project</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="agents">
-          <div class="project-thumb project-thumb--red">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-radar"></i>
+          <!-- 4. PaceIQ - Apr 2026 -->
+          <div class="project-card" data-category="data">
+            <div class="project-thumb project-thumb--blue">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-person-running"></i>
+              </div>
+              <span class="project-flag">Passion Project</span>
             </div>
-            <span class="project-flag">Agents</span>
+            <div class="project-body">
+              <h3 class="project-name">PaceIQ</h3>
+              <p class="project-desc">Bridges Strava and Notion to surface personalized running insights. Auto-syncs
+                workouts, computes pace trends, and pushes structured summaries to your Notion dashboard.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">Python</span>
+                <span class="tag tag--blue">Strava API</span>
+                <span class="tag tag--blue">Notion API</span>
+                <span class="tag tag--blue">Personal Analytics</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/pragyan2002/PaceIQ" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">Signal-Scout</h3>
-            <p class="project-desc">An AI-powered pipeline that extracts intent signals from prospect data and generates
-              hyper-personalized outreach — end-to-end from raw input to drafted message.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">TypeScript</span>
-              <span class="tag tag--blue">LLM Agents</span>
-              <span class="tag tag--blue">NLP</span>
-              <span class="tag tag--blue">Automation</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/pragyan2002/Signal-Scout" target="_blank" rel="noopener"
-                class="project-link">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="agents">
-          <div class="project-thumb project-thumb--blue">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-stethoscope"></i>
+          <!-- 5. preflight - Apr 2026 -->
+          <div class="project-card" data-category="systems">
+            <div class="project-thumb project-thumb--purple">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-plane-departure"></i>
+              </div>
+              <span class="project-flag">OSS Tool</span>
             </div>
-            <span class="project-flag">Agents</span>
+            <div class="project-body">
+              <h3 class="project-name">preflight</h3>
+              <p class="project-desc">A plugin dependency manager for Claude Code. Declare your plugin dependencies
+                and preflight resolves, installs, and validates them automatically, built for the Claude Code
+                ecosystem.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">Shell</span>
+                <span class="tag tag--blue">Claude Code</span>
+                <span class="tag tag--blue">Tooling</span>
+                <span class="tag tag--blue">OSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/pragyan2002/preflight" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">GyNuRo</h3>
-            <p class="project-desc">An agentic teleconsultation app — multi-agent orchestration for patient intake,
-              symptom routing, and appointment scheduling. Built with a TypeScript agent framework.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">TypeScript</span>
-              <span class="tag tag--blue">Agentic AI</span>
-              <span class="tag tag--blue">Multi-Agent</span>
-              <span class="tag tag--blue">Full-Stack</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/pragyan2002/GyNuRo" target="_blank" rel="noopener" class="project-link">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="data">
-          <div class="project-thumb project-thumb--green">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-music"></i>
+          <!-- 6. Data Observability Framework - 2025 -->
+          <div class="project-card" data-category="data">
+            <div class="project-thumb project-thumb--green">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-database"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">Data Observability Framework</h3>
+              <p class="project-desc">A T-SQL-based data-quality monitoring framework for core-banking and loan
+                platforms. Parameter-driven stored procedures automate audits that previously took engineers hours.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">T-SQL</span>
+                <span class="tag tag--blue">SQL Server</span>
+                <span class="tag tag--blue">Azure DevOps</span>
+              </div>
+              <div class="project-links">
+                <span class="project-link-placeholder"><i class="fa-solid fa-building"></i> Enterprise Project</span>
+              </div>
             </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">SoundScape</h3>
-            <p class="project-desc">A music content enrichment pipeline that ingests raw music metadata and augments it
-              with genre tags, mood classifications, and semantic embeddings — fully automated.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">Python</span>
-              <span class="tag tag--blue">Data Pipeline</span>
-              <span class="tag tag--blue">NLP</span>
-              <span class="tag tag--blue">Music AI</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/pragyan2002/SoundScape" target="_blank" rel="noopener" class="project-link">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="data">
-          <div class="project-thumb project-thumb--blue">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-person-running"></i>
+          <!-- 7. AutoFind - Jul 2024 -->
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-thumb project-thumb--red">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <span class="project-flag">Passion Project</span>
             </div>
-            <span class="project-flag">Passion Project</span>
+            <div class="project-body">
+              <h3 class="project-name">AutoFind</h3>
+              <p class="project-desc">An AI-powered semantic search engine for cars, built because car search engines
+                are terrible. Uses Cohere NLP models for 30% better search relevance with a fully scraped, clean
+                dataset.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">Cohere NLP</span>
+                <span class="tag tag--blue">Python</span>
+                <span class="tag tag--blue">ML</span>
+                <span class="tag tag--blue">Full-Stack</span>
+              </div>
+              <div class="project-links">
+                <span class="project-link-placeholder"><i class="fa-solid fa-lock"></i> Private Repo</span>
+              </div>
+            </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">PaceIQ</h3>
-            <p class="project-desc">Bridges Strava and Notion to surface personalized running insights — auto-syncs
-              workouts, computes pace trends, and pushes structured summaries to your Notion dashboard.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">Python</span>
-              <span class="tag tag--blue">Strava API</span>
-              <span class="tag tag--blue">Notion API</span>
-              <span class="tag tag--blue">Personal Analytics</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/pragyan2002/PaceIQ" target="_blank" rel="noopener" class="project-link">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div class="project-card" data-category="systems">
-          <div class="project-thumb project-thumb--purple">
-            <div class="project-thumb-icon">
-              <i class="fa-solid fa-plane-departure"></i>
+          <!-- 8. PV Power Prediction - Jan-Jun 2024 -->
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-thumb project-thumb--blue">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-solar-panel"></i>
+              </div>
             </div>
-            <span class="project-flag">OSS Tool</span>
+            <div class="project-body">
+              <h3 class="project-name">PV Power Prediction</h3>
+              <p class="project-desc">Predicting photovoltaic solar panel output with supervised ML. Achieved a 15%
+                R&sup2; improvement over baseline using SVR, Random Forest, and Polynomial Regression.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">TensorFlow</span>
+                <span class="tag tag--blue">Scikit-learn</span>
+                <span class="tag tag--blue">Python</span>
+                <span class="tag tag--blue">Research</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.linkedin.com/in/pragyan-shukla-14808a206" target="_blank" rel="noopener"
+                  class="project-link">
+                  <i class="fa-brands fa-linkedin-in"></i> RISE Symposium
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">preflight</h3>
-            <p class="project-desc">A plugin dependency manager for Claude Code — declare your plugin dependencies,
-              and preflight resolves, installs, and validates them automatically. Built for the Claude Code ecosystem.</p>
-            <div class="project-tags">
-              <span class="tag tag--blue">Shell</span>
-              <span class="tag tag--blue">Claude Code</span>
-              <span class="tag tag--blue">Tooling</span>
-              <span class="tag tag--blue">OSS</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/pragyan2002/preflight" target="_blank" rel="noopener" class="project-link">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
 
-      </div>
+          <!-- 9. Excel Automation - May-Jul 2023 -->
+          <div class="project-card" data-category="systems">
+            <div class="project-thumb project-thumb--purple">
+              <div class="project-thumb-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">Excel Automation Pipeline</h3>
+              <p class="project-desc">AWS + Python pipeline that cut a manual Excel workflow from 8 hours to 5 minutes.
+                Serverless execution via Lambda, storage via S3, notifications via SES/SNS.</p>
+              <div class="project-tags">
+                <span class="tag tag--blue">Python</span>
+                <span class="tag tag--blue">AWS Lambda</span>
+                <span class="tag tag--blue">Docker</span>
+                <span class="tag tag--blue">S3</span>
+              </div>
+              <div class="project-links">
+                <span class="project-link-placeholder"><i class="fa-solid fa-building"></i> Enterprise Project</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.projects-carousel -->
+
+        <button class="carousel-arrow carousel-next" id="carousel-next" aria-label="Next projects">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div><!-- /.carousel-wrap -->
+
     </div>
   </section>
 
@@ -608,8 +644,8 @@
           </div>
           <h3 class="blog-title">We Didn't Start The Fire</h3>
           <p class="blog-excerpt">
-            A co-authored piece exploring the rapid acceleration of AI and technology — and whether humans are steering
-            the flame or just standing next to it.
+            A co-authored piece exploring the rapid acceleration of AI and technology, asking whether humans are
+            steering the flame or just standing next to it.
           </p>
           <a href="https://substack.com/@pragyanshukla" target="_blank" rel="noopener" class="blog-link">
             Read on Substack <i class="fa-solid fa-arrow-right"></i>
@@ -645,7 +681,7 @@
 
       <p class="terminal-intro">Not into scrolling? Try typing instead.</p>
 
-      <div class="terminal-window">
+      <div class="terminal-window" id="inline-terminal-window">
         <div class="terminal-titlebar">
           <span class="dot dot-red"></span>
           <span class="dot dot-yellow"></span>
@@ -660,8 +696,13 @@
         </div>
       </div>
 
-      <p class="terminal-hint">Try: <code>help</code>, <code>whoami</code>, <code>ls projects</code>,
-        <code>neofetch</code>, <code>cars</code></p>
+      <p class="terminal-hint">
+        Try:
+        <button class="term-cmd-btn" data-cmd="help" data-target="inline">help</button>,
+        <button class="term-cmd-btn" data-cmd="whoami" data-target="inline">whoami</button>,
+        <button class="term-cmd-btn" data-cmd="ls projects" data-target="inline">ls projects</button>,
+        <button class="term-cmd-btn" data-cmd="cars" data-target="inline">cars</button>
+      </p>
     </div>
   </section>
 
@@ -677,7 +718,7 @@
       <div class="contact-wrap">
         <p class="contact-copy">
           I'm open to new opportunities, interesting projects, and good coffee conversations. Whether it's a job, a
-          collab, or just a question — drop me a line.
+          collab, or just a question, drop me a line.
         </p>
 
         <a href="mailto:prag.shank@gmail.com" class="contact-email-btn">
@@ -715,6 +756,39 @@
       <p class="footer-tagline">Built on caffeine and curiosity.</p>
     </div>
   </footer>
+
+  <!-- ====== TERMINAL MODAL ====== -->
+  <div id="terminal-modal" class="term-modal" aria-modal="true" role="dialog" aria-label="Interactive terminal"
+    aria-hidden="true">
+    <div class="term-modal-backdrop" id="term-modal-backdrop"></div>
+    <div class="term-modal-inner">
+      <button class="term-modal-close" id="term-modal-close" aria-label="Close terminal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="terminal-window terminal-window--modal">
+        <div class="terminal-titlebar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">pragyan@portfolio ~ </span>
+        </div>
+        <div class="terminal-body" id="modal-terminal-body"></div>
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">pragyan@portfolio:~$&nbsp;</span>
+          <input type="text" id="modal-terminal-input" class="terminal-input" autocomplete="off" spellcheck="false"
+            aria-label="Terminal input" />
+        </div>
+      </div>
+      <p class="terminal-hint terminal-hint--modal">
+        Try:
+        <button class="term-cmd-btn" data-cmd="help"        data-target="modal">help</button>,
+        <button class="term-cmd-btn" data-cmd="whoami"      data-target="modal">whoami</button>,
+        <button class="term-cmd-btn" data-cmd="ls projects" data-target="modal">ls projects</button>,
+        <button class="term-cmd-btn" data-cmd="neofetch"    data-target="modal">neofetch</button>,
+        <button class="term-cmd-btn" data-cmd="cars"        data-target="modal">cars</button>
+      </p>
+    </div>
+  </div>
 
   <script src="assets/js/script.js"></script>
 </body>
