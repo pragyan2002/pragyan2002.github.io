@@ -12,7 +12,27 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
   highlightActiveLink();
   updateDotNav();
+  updateTach();
 }, { passive: true });
+
+// ---- SCROLL TACHOMETER: needle sweeps -120deg to +120deg, redlines at the footer ----
+const tachNeedle = document.getElementById('tach-needle');
+
+function updateTach() {
+  if (!tachNeedle) return;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = max > 0 ? window.scrollY / max : 0;
+  tachNeedle.style.transform = `rotate(${-120 + progress * 240}deg)`;
+}
+
+updateTach();
+window.addEventListener('resize', updateTach, { passive: true });
+
+// Short final sections can never pass the scroll threshold, so treat
+// page-bottom as the last section being engaged.
+function atPageBottom() {
+  return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+}
 
 function highlightActiveLink() {
   const sections = document.querySelectorAll('section[id]');
@@ -21,6 +41,7 @@ function highlightActiveLink() {
     const top = section.offsetTop - 80;
     if (window.scrollY >= top) current = section.id;
   });
+  if (sections.length && atPageBottom()) current = sections[sections.length - 1].id;
   navLinks.forEach(link => {
     link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
   });
@@ -155,6 +176,37 @@ const observer = new IntersectionObserver(
 
 fadeEls.forEach(el => observer.observe(el));
 
+// ---- TELEMETRY COUNT-UP ----
+// Markup ships with final values, so no-JS and reduced-motion both show real numbers.
+const telemetryNums = document.querySelectorAll('.telemetry-num');
+const reduceMotion  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (telemetryNums.length && !reduceMotion) {
+  const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      countObserver.unobserve(entry.target);
+
+      const el       = entry.target;
+      const target   = parseInt(el.dataset.count, 10);
+      const prefix   = el.dataset.prefix || '';
+      const suffix   = el.dataset.suffix || '';
+      const duration = 1200;
+      const start    = performance.now();
+
+      function tick(now) {
+        const p     = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.5 });
+
+  telemetryNums.forEach(el => countObserver.observe(el));
+}
+
 // ---- PROJECT FILTER ----
 const filterPills  = document.querySelectorAll('.filter-pill');
 const projectCards = document.querySelectorAll('.project-card');
@@ -215,6 +267,7 @@ function updateDotNav() {
   sections.forEach(sec => {
     if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
   });
+  if (sections.length && atPageBottom()) current = sections[sections.length - 1].id;
   dotItems.forEach(dot => {
     const href = dot.getAttribute('href')?.replace('#', '');
     dot.classList.toggle('active', href === current || (current === '' && href === 'hero'));
@@ -244,6 +297,8 @@ function createTerminal(bodyEl, inputEl) {
         { cls: 't-dim',  text: '  contact           get in touch' },
         { cls: 't-dim',  text: '  neofetch          system info card' },
         { cls: 't-dim',  text: '  cars              easter egg' },
+        { cls: 't-dim',  text: '  dyno              strap the portfolio to a dyno' },
+        { cls: 't-dim',  text: '  redline           check the rev range' },
         { cls: 't-dim',  text: '  clear             clear terminal' },
       ];
     },
@@ -365,6 +420,29 @@ function createTerminal(bodyEl, inputEl) {
         { cls: '',       text: '  Rimac Nevera          the future is already here' },
         { cls: '',       text: '' },
         { cls: 't-dim',  text: "  (yes, I have opinions. no, I won't apologize.)" },
+      ];
+    },
+
+    redline() {
+      return [
+        { cls: 't-head',  text: 'RPM   0    1    2    3    4    5    6    7    8' },
+        { cls: 't-pre',   text: '      |==================================###|' },
+        { cls: 't-accent',text: '                                          ^ you are here' },
+        { cls: '',        text: '' },
+        { cls: 't-accent',text: '  SHIFT.' },
+        { cls: 't-dim',   text: '  (this site redlines at the footer. keep scrolling.)' },
+      ];
+    },
+
+    dyno() {
+      return [
+        { cls: 't-head', text: 'Strapping portfolio to the dyno...' },
+        { cls: '',       text: '' },
+        { cls: 't-dim',  text: '  RUN 1   Python ............ peak output' },
+        { cls: 't-dim',  text: '  RUN 2   TypeScript ........ strong midrange' },
+        { cls: 't-dim',  text: '  RUN 3   SQL ............... torque monster' },
+        { cls: '',       text: '' },
+        { cls: 't-accent', text: '  RESULT: 9 projects, 5 roles, zero frameworks. All motor.' },
       ];
     },
 

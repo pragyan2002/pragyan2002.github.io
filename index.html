@@ -5,13 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pragyan Shukla</title>
-  <meta name="description" content="Pragyan Shukla: Software Developer, ML Enthusiast, Car Guy." />
+  <meta name="description" content="Pragyan Shukla: software developer and ML engineer. I build things that move. In code and on roads." />
+  <meta name="theme-color" content="#0e0e10" />
+
+  <!-- Social cards -->
+  <meta property="og:title" content="Pragyan Shukla" />
+  <meta property="og:description" content="Software developer and ML engineer. I build things that move. In code and on roads." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pragyan2002.github.io/" />
+  <meta property="og:image" content="https://pragyan2002.github.io/assets/images/my-avatar.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pragyan Shukla" />
+  <meta name="twitter:description" content="Software developer and ML engineer. I build things that move. In code and on roads." />
+  <meta name="twitter:image" content="https://pragyan2002.github.io/assets/images/my-avatar.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
 
   <!-- Icons -->
@@ -26,17 +38,45 @@
 
 <body>
 
-  <!-- ====== DOT NAV ====== -->
+  <!-- ====== FILM GRAIN ====== -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ====== GEAR NAV ====== -->
   <nav class="dot-nav" id="dot-nav" aria-label="Quick navigation">
-    <a class="dot-nav-item" href="#hero"       data-label="Home"></a>
-    <a class="dot-nav-item" href="#about"      data-label="About"></a>
-    <a class="dot-nav-item" href="#experience" data-label="Experience"></a>
-    <a class="dot-nav-item" href="#projects"   data-label="Projects"></a>
-    <a class="dot-nav-item" href="#skills"     data-label="Skills"></a>
-    <a class="dot-nav-item" href="#blog"       data-label="Blog"></a>
-    <a class="dot-nav-item" href="#terminal"   data-label="Terminal"></a>
-    <a class="dot-nav-item" href="#contact"    data-label="Contact"></a>
+    <a class="dot-nav-item" href="#hero"       data-label="Home">N</a>
+    <a class="dot-nav-item" href="#about"      data-label="About">1</a>
+    <a class="dot-nav-item" href="#experience" data-label="Experience">2</a>
+    <a class="dot-nav-item" href="#projects"   data-label="Projects">3</a>
+    <a class="dot-nav-item" href="#skills"     data-label="Skills">4</a>
+    <a class="dot-nav-item" href="#blog"       data-label="Blog">5</a>
+    <a class="dot-nav-item" href="#terminal"   data-label="Terminal">6</a>
+    <a class="dot-nav-item" href="#contact"    data-label="Contact">7</a>
   </nav>
+
+  <!-- ====== SCROLL TACHOMETER ====== -->
+  <svg class="scroll-tach" id="scroll-tach" viewBox="0 0 100 100" aria-hidden="true">
+    <!-- outer arc: 240deg sweep, pivot (50,60), radius 40 -->
+    <path d="M 15.36 80 A 40 40 0 1 1 84.64 80" fill="none" stroke="var(--border)" stroke-width="2" />
+    <!-- redline segment: last 15% of the sweep -->
+    <path d="M 89.78 55.82 A 40 40 0 0 1 84.64 80" fill="none" stroke="var(--red)" stroke-width="3" />
+    <!-- tick marks every 30deg -->
+    <g stroke="var(--text-dimmer)" stroke-width="1.5">
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(-120 50 60)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(-90 50 60)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(-60 50 60)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(-30 50 60)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(0 50 60)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(30 50 60)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(60 50 60)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(90 50 60)" stroke="var(--red)" />
+      <line x1="50" y1="22" x2="50" y2="27" transform="rotate(120 50 60)" stroke="var(--red)" />
+    </g>
+    <g id="tach-needle">
+      <line x1="50" y1="66" x2="50" y2="24" stroke="var(--amber)" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+    <circle cx="50" cy="60" r="4.5" fill="var(--bg-card-h)" stroke="var(--border)" />
+    <text class="tach-label" x="50" y="92" text-anchor="middle">RPM</text>
+  </svg>
 
   <!-- ====== NAVBAR ====== -->
   <nav class="navbar" id="navbar">
@@ -144,6 +184,25 @@
             </div>
             <div class="stat-pill">
               <i class="fa-solid fa-graduation-cap"></i> GMU CS 2025
+            </div>
+          </div>
+
+          <div class="telemetry" aria-label="Career telemetry">
+            <div class="telemetry-item">
+              <span class="telemetry-num" data-count="95" data-suffix="%">95%</span>
+              <span class="telemetry-label">workflow time cut</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-num" data-count="15" data-prefix="+" data-suffix="%">+15%</span>
+              <span class="telemetry-label">R2 over baseline</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-num" data-count="400" data-suffix="+">400+</span>
+              <span class="telemetry-label">devices monitored</span>
+            </div>
+            <div class="telemetry-item">
+              <span class="telemetry-num" data-count="9">9</span>
+              <span class="telemetry-label">projects shipped</span>
             </div>
           </div>
         </div>
@@ -679,7 +738,7 @@
         <div class="section-line"></div>
       </div>
 
-      <p class="terminal-intro">Not into scrolling? Try typing instead.</p>
+      <p class="terminal-intro">Prefer a cockpit view? Try typing instead.</p>
 
       <div class="terminal-window" id="inline-terminal-window">
         <div class="terminal-titlebar">
@@ -701,7 +760,8 @@
         <button class="term-cmd-btn" data-cmd="help" data-target="inline">help</button>,
         <button class="term-cmd-btn" data-cmd="whoami" data-target="inline">whoami</button>,
         <button class="term-cmd-btn" data-cmd="ls projects" data-target="inline">ls projects</button>,
-        <button class="term-cmd-btn" data-cmd="cars" data-target="inline">cars</button>
+        <button class="term-cmd-btn" data-cmd="cars" data-target="inline">cars</button>,
+        <button class="term-cmd-btn" data-cmd="redline" data-target="inline">redline</button>
       </p>
     </div>
   </section>
@@ -753,7 +813,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">&copy; 2026 Pragyan Shukla</p>
-      <p class="footer-tagline">Built on caffeine and curiosity.</p>
+      <p class="footer-tagline">Hand-built. No frameworks, no filler, all motor.</p>
     </div>
   </footer>
 
@@ -785,7 +845,8 @@
         <button class="term-cmd-btn" data-cmd="whoami"      data-target="modal">whoami</button>,
         <button class="term-cmd-btn" data-cmd="ls projects" data-target="modal">ls projects</button>,
         <button class="term-cmd-btn" data-cmd="neofetch"    data-target="modal">neofetch</button>,
-        <button class="term-cmd-btn" data-cmd="cars"        data-target="modal">cars</button>
+        <button class="term-cmd-btn" data-cmd="cars"        data-target="modal">cars</button>,
+        <button class="term-cmd-btn" data-cmd="dyno"        data-target="modal">dyno</button>
       </p>
     </div>
   </div>
